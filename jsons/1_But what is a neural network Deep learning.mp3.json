@@ -1,0 +1,1356 @@
+{
+  "chunks": [
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " This is a 3. It's sloppily written and rendered at an extremely low resolution of 28 by 28 pixels,",
+      "start": 0.0,
+      "end": 10.68
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " but your brain has no trouble recognizing it as a 3. And I want you to take a moment to appreciate",
+      "start": 10.68,
+      "end": 15.96
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " how crazy it is that brains can do this so effortlessly. I mean this, this, and this are",
+      "start": 15.96,
+      "end": 21.3
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " also recognizable as 3s, even though the specific values of each pixel is very different from one",
+      "start": 21.3,
+      "end": 27.38
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " image to the next. The particular light-sensitive cells in your eye that are firing when you",
+      "start": 27.38,
+      "end": 32.66
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " see this 3 are very different from the ones firing when you see this 3. But something",
+      "start": 32.66,
+      "end": 38.28
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " in that crazy smart visual cortex of yours resolves these as representing the same idea, while",
+      "start": 38.28,
+      "end": 44.34
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " at the same time recognizing other images as their own distinct ideas. But if I told you,",
+      "start": 44.34,
+      "end": 50.14
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " hey, sit down and write for me a program that takes in a grid of 28 by 28 pixels like this",
+      "start": 50.14,
+      "end": 56.9
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " and outputs a single number between 0 and 10, telling you what it thinks the digit is,",
+      "start": 56.9,
+      "end": 62.18
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " well the task goes from comically trivial to dauntingly difficult. Unless you've been",
+      "start": 62.18,
+      "end": 67.62
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " living under a rock, I think I hardly need to motivate the relevance and importance of",
+      "start": 67.62,
+      "end": 71.4
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " machine learning and neural networks to the present and to the future, but what I want",
+      "start": 71.4,
+      "end": 75.48
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " to do here is show you what a neural network actually is, assuming no background, and to help",
+      "start": 75.48,
+      "end": 80.58
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " visualize what it's doing. Not as a buzzword, but as a piece of math. My hope is just that you",
+      "start": 80.58,
+      "end": 85.86
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " come away feeling like the structure itself is motivated, and to feel like you know what",
+      "start": 85.86,
+      "end": 90.18
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " it means when you read or hear about a neural network quote unquote learning. This video is",
+      "start": 90.18,
+      "end": 95.94
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " just going to be devoted to the structure component of that, and the following one is going to tackle",
+      "start": 95.94,
+      "end": 99.86
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " learning. What we're going to do is put together a neural network that can learn to recognize handwritten digits.",
+      "start": 99.86,
+      "end": 105.94
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " This is a somewhat classic example for introducing the topic, and I'm happy to stick with the status quo here,",
+      "start": 109.46000000000001,
+      "end": 114.58
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " because at the end of the two videos I want to point you to a couple good resources where you",
+      "start": 114.58,
+      "end": 118.26
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " can learn more, and where you can download the code that does this and play with it on your own computer.",
+      "start": 118.26,
+      "end": 122.98
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " There are many, many variants of neural networks, and in recent years there's been sort of a boom",
+      "start": 124.98,
+      "end": 130.26
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " in research towards these variants, but in these two introductory videos you and I are just going to",
+      "start": 130.26,
+      "end": 135.7
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " look at the simplest plain vanilla form with no added frills. This is kind of a necessary prerequisite",
+      "start": 135.7,
+      "end": 141.54
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " for understanding any of the more powerful modern variants, and trust me it still has plenty of",
+      "start": 141.54,
+      "end": 146.42
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " complexity for us to wrap our minds around. But even in this simplest form it can learn to recognize",
+      "start": 146.42,
+      "end": 151.85999999999999
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " handwritten digits, which is a pretty cool thing for a computer to be able to do. And at the same time",
+      "start": 151.85999999999999,
+      "end": 158.34
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " you'll see how it does fall short of a couple hopes that we might have for it. As the name suggests, neural",
+      "start": 158.34,
+      "end": 164.89999999999998
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " networks are inspired by the brain, but let's break that down. What are the neurons and in what sense",
+      "start": 164.9,
+      "end": 170.5
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " are they linked together? Right now when I say neuron, all I want you to think about is a thing that holds",
+      "start": 170.5,
+      "end": 177.3
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " a number, specifically a number between 0 and 1. It's really not more than that. For example, the network",
+      "start": 177.3,
+      "end": 184.98000000000002
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " starts with a bunch of neurons corresponding to each of the 28x28 pixels of the input image, which is",
+      "start": 184.98000000000002,
+      "end": 192.02
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " 784 neurons in total. Each one of these holds a number that represents the grayscale value of the",
+      "start": 192.02,
+      "end": 199.3
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " corresponding pixel, ranging from 0 for black pixels up to 1 for white pixels. This number inside the",
+      "start": 199.3,
+      "end": 206.34
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " neuron is called its activation, and the image you might have in mind here is that each neuron is lit up",
+      "start": 206.34,
+      "end": 212.18
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " when its activation is a high number. So all of these 784 neurons make up the first layer of our network.",
+      "start": 212.18,
+      "end": 221.54000000000002
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " Now jumping over to the last layer, this has 10 neurons, each representing one of the digits.",
+      "start": 222.02,
+      "end": 231.3
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " The activation in these neurons, again some number that's between 0 and 1, represents how much the",
+      "start": 231.86,
+      "end": 238.34
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " system thinks that a given image corresponds with a given digit. There's also a couple layers in between,",
+      "start": 238.34,
+      "end": 244.82000000000002
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " called the hidden layers, which for the time being should just be a giant question mark for how on earth",
+      "start": 244.82000000000002,
+      "end": 250.74
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " this process of recognizing digits is going to be handled. In this network I chose two hidden layers,",
+      "start": 250.74,
+      "end": 256.18
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " each one with 16 neurons, and admittedly that's kind of an arbitrary choice. To be honest, I chose two",
+      "start": 256.18,
+      "end": 261.94
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " layers based on how I want to motivate the structure in just a moment, and 16? Well that was just a nice",
+      "start": 261.94,
+      "end": 267.06
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " number to fit on the screen. In practice there is a lot of room for experiment with a specific structure",
+      "start": 267.06,
+      "end": 271.94
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " here. The way the network operates, activations in one layer determine the activations of the next layer.",
+      "start": 271.94,
+      "end": 278.42
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " And of course the heart of the network, as an information processing mechanism, comes down to",
+      "start": 278.42,
+      "end": 284.1
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " exactly how those activations from one layer bring about activations in the next layer.",
+      "start": 284.1,
+      "end": 288.5
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " It's meant to be loosely analogous to how in biological networks of neurons, some groups of neurons firing",
+      "start": 289.14000000000004,
+      "end": 295.62
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " cause certain others to fire. Now the network I'm showing here has already been trained to recognize",
+      "start": 295.62,
+      "end": 301.06
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " digits. Let me show you what I mean by that. It means if you feed in an image, lighting up all 784",
+      "start": 301.06,
+      "end": 307.7
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " neurons of the input layer according to the brightness of each pixel in the image, that pattern of",
+      "start": 307.7,
+      "end": 313.46
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " activations causes some very specific pattern in the next layer, which causes some pattern in the one",
+      "start": 313.46,
+      "end": 318.98
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " after it, which finally gives some pattern in the output layer. And the brightest neuron of that output",
+      "start": 318.98,
+      "end": 324.9
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " layer is the network's choice, so to speak, for what digit this image represents.",
+      "start": 324.9,
+      "end": 329.29999999999995
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " And before jumping into the math for how one layer influences the next, or how training works,",
+      "start": 332.34,
+      "end": 337.29999999999995
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " let's just talk about why it's even reasonable to expect a layered structure like this to behave",
+      "start": 337.29999999999995,
+      "end": 342.73999999999995
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " intelligently. What are we expecting here? What is the best hope for what those middle layers might be doing?",
+      "start": 342.73999999999995,
+      "end": 348.17999999999995
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " Well, when you or I recognize digits, we piece together various components. A 9 has a loop up top,",
+      "start": 348.18,
+      "end": 355.62
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " and a line on the right. An 8 also has a loop up top, but it's paired with another loop down low.",
+      "start": 355.62,
+      "end": 360.98
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " A 4 basically breaks down into 3 specific lines, and things like that. Now in a perfect world,",
+      "start": 361.86,
+      "end": 368.82
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " we might hope that each neuron in the second to last layer corresponds with one of these subcomponents.",
+      "start": 368.82,
+      "end": 374.58
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " That any time you feed in an image with, say, a loop up top, like a 9 or an 8, there's some specific",
+      "start": 374.58,
+      "end": 381.3
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " neuron whose activation is going to be close to 1. And I don't mean this specific loop of pixels,",
+      "start": 381.3,
+      "end": 386.58
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " the hope would be that any generally loopy pattern towards the top sets off this neuron. That way,",
+      "start": 386.58,
+      "end": 392.82
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " going from the third layer to the last one just requires learning which combination of subcomponents",
+      "start": 392.82,
+      "end": 398.58
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " corresponds to which digits. Of course, that just kicks the problem down the road, because how would you",
+      "start": 398.58,
+      "end": 403.94
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " recognize these subcomponents, or even learn what the right subcomponents should be? And I still",
+      "start": 403.94,
+      "end": 408.18
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " haven't even talked about how one layer influences the next, but run with me on this one for a moment.",
+      "start": 408.18,
+      "end": 413.46
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " Recognizing a loop can also break down into subproblems. One reasonable way to do this would",
+      "start": 413.46,
+      "end": 418.9
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " be to first recognize the various little edges that make it up. Similarly, a long line, like the kind",
+      "start": 418.9,
+      "end": 425.7
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " you might see in the digits 1, or 4, or 7, well that's really just a long edge. Or maybe you think of it as a",
+      "start": 425.7,
+      "end": 431.7
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " certain pattern of several smaller edges. So maybe our hope is that each neuron in the second layer",
+      "start": 431.7,
+      "end": 439.06
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " of the network corresponds with the various relevant little edges. Maybe when an image like this one",
+      "start": 439.06,
+      "end": 445.53999999999996
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " comes in, it lights up all of the neurons associated with around 8 to 10 specific little edges, which in",
+      "start": 445.53999999999996,
+      "end": 452.5
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " turn lights up the neurons associated with the upper loop and a long vertical line, and those light up the",
+      "start": 452.5,
+      "end": 458.26
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " neuron associated with a 9. Whether or not this is what our final network actually does is another",
+      "start": 458.26,
+      "end": 463.78
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " question, one that I'll come back to once we see how to train the network. But this is a hope that we",
+      "start": 463.78,
+      "end": 468.82
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " might have, a sort of goal with the layered structure like this. Moreover, you can imagine how being able",
+      "start": 468.82,
+      "end": 474.98
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " to detect edges and patterns like this would be really useful for other image recognition tasks.",
+      "start": 474.98,
+      "end": 480.18
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " And even beyond image recognition, there are all sorts of intelligent things you might want to do",
+      "start": 480.74,
+      "end": 485.06
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " that break down into layers of abstraction. Parsing speech, for example, involves taking raw audio and",
+      "start": 485.06,
+      "end": 491.14
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " picking out distinct sounds, which combine to make certain syllables, which combine to form words,",
+      "start": 491.14,
+      "end": 496.82
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " which combine to make up phrases and more abstract thoughts, etc. But getting back to how any of this",
+      "start": 496.82,
+      "end": 502.74
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " actually works, picture yourself right now designing how exactly the activations in one layer might",
+      "start": 502.74,
+      "end": 508.5
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " determine the activations in the next. The goal is to have some mechanism that could conceivably combine",
+      "start": 508.5,
+      "end": 514.82
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " pixels into edges, or edges into patterns, or patterns into digits. And to zoom in on one very specific",
+      "start": 514.82,
+      "end": 521.3000000000001
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " example, let's say the hope is for one particular neuron in the second layer to pick up on whether or",
+      "start": 521.3000000000001,
+      "end": 527.5400000000001
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " not the image has an edge in this region here. The question at hand is what parameters should the",
+      "start": 527.5400000000001,
+      "end": 534.34
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " network have? What dials and knobs should you be able to tweak so that it's expressive enough to",
+      "start": 534.34,
+      "end": 540.34
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " potentially capture this pattern, or any other pixel pattern, or the pattern that several edges can",
+      "start": 540.34,
+      "end": 545.94
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " make a loop, and other such things? Well, what we'll do is assign a weight to each one of the",
+      "start": 545.94,
+      "end": 551.62
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " connections between our neuron and the neurons from the first layer. These weights are just numbers.",
+      "start": 551.62,
+      "end": 557.62
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " Then take all of those activations from the first layer and compute their weighted sum according to",
+      "start": 558.5,
+      "end": 564.74
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " these weights. I find it helpful to think of these weights as being organized into a little grid of their own,",
+      "start": 564.74,
+      "end": 571.7
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " and I'm going to use green pixels to indicate positive weights and red pixels to indicate negative weights,",
+      "start": 572.26,
+      "end": 577.14
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " where the brightness of that pixel is some loose depiction of the weights value.",
+      "start": 577.46,
+      "end": 581.7
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " Now if we made the weights associated with almost all of the pixels zero, except for some positive weights in this region that we care about,",
+      "start": 582.58,
+      "end": 589.3
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " then taking the weighted sum of all the pixel values really just amounts to adding up the values of the pixel just in the region that we care about.",
+      "start": 589.3,
+      "end": 597.38
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " And if you really wanted to pick up on whether there's an edge here,",
+      "start": 598.9,
+      "end": 601.9399999999999
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " what you might do is have some negative weights associated with the surrounding pixels.",
+      "start": 602.42,
+      "end": 606.5799999999999
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " Then the sum is largest when those middle pixels are bright, but the surrounding pixels are darker.",
+      "start": 607.3,
+      "end": 612.66
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " When you compute a weighted sum like this, you might come out with any number,",
+      "start": 614.5,
+      "end": 618.5
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " but for this network, what we want is for activations to be some value between zero and one.",
+      "start": 618.5,
+      "end": 623.38
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " So a common thing to do is to pump this weighted sum",
+      "start": 623.94,
+      "end": 626.58
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " into some function that squishes the real number line into the range between zero and one.",
+      "start": 627.06,
+      "end": 631.78
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " And a common function that does this is called the sigmoid function, also known as a logistic curve.",
+      "start": 632.34,
+      "end": 637.3
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " Basically, very negative inputs end up close to zero,",
+      "start": 637.94,
+      "end": 640.74
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " very positive inputs end up close to one, and it just steadily increases around the input zero.",
+      "start": 641.22,
+      "end": 646.5
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " So the activation of the neuron here is basically a measure of how positive the relevant weighted sum is.",
+      "start": 648.5,
+      "end": 656.1
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " But maybe it's not that you want the neuron to light up when the weighted sum is bigger than zero.",
+      "start": 657.7,
+      "end": 661.86
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " Maybe you only want it to be active when the sum is bigger than, say, 10.",
+      "start": 662.34,
+      "end": 666.26
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " That is, you want some bias for it to be inactive.",
+      "start": 666.9,
+      "end": 670.26
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " What we'll do then is just add in some other number, like negative 10, to this weighted sum",
+      "start": 670.26,
+      "end": 676.1
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " before plugging it through the sigmoid squishification function.",
+      "start": 676.5,
+      "end": 679.62
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " That additional number is called the bias.",
+      "start": 680.42,
+      "end": 682.5
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " So the weights tell you what pixel pattern this neuron in the second layer is picking up on,",
+      "start": 683.3,
+      "end": 688.5
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " and the bias tells you how high the weighted sum needs to be",
+      "start": 688.5,
+      "end": 691.9399999999999
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " before the neuron starts getting meaningfully active.",
+      "start": 692.42,
+      "end": 695.06
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " And that is just one neuron. Every other neuron in this layer is going to be connected to all",
+      "start": 695.06,
+      "end": 702.0999999999999
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " 784 pixel neurons from the first layer, and each one of those 784 connections has its own weight",
+      "start": 702.0999999999999,
+      "end": 709.54
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " associated with it. Also, each one has some bias, some other number that you add on to the weighted",
+      "start": 709.54,
+      "end": 715.54
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " sum before squishing it with the sigmoid. And that's a lot to think about! With this hidden layer of 16",
+      "start": 715.54,
+      "end": 721.4599999999999
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " neurons, that's a total of 784 times 16 weights, along with 16 biases. And all of that is just the",
+      "start": 721.46,
+      "end": 729.94
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " connections from the first layer to the second. The connections between the other layers also have",
+      "start": 729.94,
+      "end": 734.82
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " a bunch of weights and biases associated with them. All said and done, this network has almost exactly",
+      "start": 734.82,
+      "end": 741.22
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " 13,000 total weights and biases. 13,000 knobs and dials that can be tweaked and turned to make this",
+      "start": 741.22,
+      "end": 748.1
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " network behave in different ways. So when we talk about learning, what that's referring to is getting",
+      "start": 748.1,
+      "end": 754.66
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " the computer to find a valid setting for all of these many many numbers so that it'll actually",
+      "start": 754.66,
+      "end": 759.86
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " solve the problem at hand. One thought experiment that is at once fun and kind of horrifying is to",
+      "start": 759.86,
+      "end": 766.4200000000001
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " imagine sitting down and setting all of these weights and biases by hand, purposefully tweaking the",
+      "start": 766.4200000000001,
+      "end": 771.38
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " numbers so that the second layer picks up on edges, the third layer picks up on patterns, etc.",
+      "start": 771.38,
+      "end": 776.58
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " I personally find this satisfying rather than just treating the network as a total black box,",
+      "start": 776.58,
+      "end": 781.46
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " because when the network doesn't perform the way you anticipate, if you've built up a little bit of",
+      "start": 781.94,
+      "end": 786.82
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " a relationship with what those weights and biases actually mean, you have a starting place for",
+      "start": 786.82,
+      "end": 791.38
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " experimenting with how to change the structure to improve. Or when the network does work but not",
+      "start": 791.38,
+      "end": 796.74
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " for the reasons you might expect, digging into what the weights and biases are doing is a good way to",
+      "start": 796.74,
+      "end": 801.7800000000001
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " challenge your assumptions and really expose the full space of possible solutions. By the way,",
+      "start": 801.78,
+      "end": 807.14
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " the actual function here is a little cumbersome to write down, don't you think?",
+      "start": 807.14,
+      "end": 810.5799999999999
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " So let me show you a more notationally compact way that these connections are represented.",
+      "start": 812.5799999999999,
+      "end": 817.54
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " This is how you'd see it if you choose to read up more about neural networks.",
+      "start": 817.54,
+      "end": 820.42
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " See this, the matrix. Ariamente, all, let me draw down, and we see you now on a rail arm in",
+      "start": 820.42,
+      "end": 833.62
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " the sameonut edit as a argot. S Sandleton Consortium Democratic values,",
+      "start": 833.62,
+      "end": 836.9
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " of course, in the same way, I root on theCINGS will continue the things that I choose, and I",
+      "start": 836.9,
+      "end": 840.42
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " mean that we are wasting all of this novaium in eachvector feels like this normal return,",
+      "start": 840.42,
+      "end": 844.9
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " of the terms in the matrix vector product of everything we have on the left here.",
+      "start": 844.9,
+      "end": 849.3
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " By the way, so much of machine learning just comes down to having a good grasp of linear algebra,",
+      "start": 853.78,
+      "end": 858.5799999999999
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " so for any of you who want a nice visual understanding for matrices and what matrix",
+      "start": 858.5799999999999,
+      "end": 862.66
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " vector multiplication means, take a look at the series I did on linear algebra, especially chapter",
+      "start": 862.66,
+      "end": 868.02
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " 3. Back to our expression, instead of talking about adding the bias to each one of these values",
+      "start": 868.02,
+      "end": 873.54
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " independently, we represent it by organizing all those biases into a vector, and adding the entire",
+      "start": 873.54,
+      "end": 879.6999999999999
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " vector to the previous matrix vector product. Then as a final step, I'll wrap a sigmoid around the",
+      "start": 879.6999999999999,
+      "end": 886.42
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " outside here, and what that's supposed to represent is that you're going to apply the sigmoid function",
+      "start": 886.42,
+      "end": 891.2199999999999
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " to each specific component of the resulting vector inside. So once you write down this weight matrix",
+      "start": 891.2199999999999,
+      "end": 898.18
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " and these vectors as their own symbols, you can communicate the full transition of activations",
+      "start": 898.18,
+      "end": 903.38
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " from one layer to the next in an extremely tight and neat little expression. And this makes the",
+      "start": 903.38,
+      "end": 908.74
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " relevant code both a lot simpler and a lot faster, since many libraries optimize the heck out of matrix",
+      "start": 908.74,
+      "end": 914.82
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " multiplication. Remember how earlier I said these neurons are simply things that hold numbers? Well,",
+      "start": 914.82,
+      "end": 922.42
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " of course, the specific numbers that they hold depends on the image you feed in.",
+      "start": 922.42,
+      "end": 926.26
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " So it's actually more accurate to think of each neuron as a function, one that takes in the",
+      "start": 928.02,
+      "end": 932.98
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " outputs of all the neurons in the previous layer, and spits out a number between 0 and 1.",
+      "start": 932.98,
+      "end": 938.26
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " Really, the entire network is just a function, one that takes in 784 numbers as an input,",
+      "start": 939.0600000000001,
+      "end": 944.74
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " and spits out 10 numbers as an output. It's an absurdly complicated function, one that involves",
+      "start": 944.74,
+      "end": 950.4200000000001
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " 13,000 parameters in the forms of these weights and biases that pick up on certain patterns, and which",
+      "start": 950.4200000000001,
+      "end": 955.78
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " involves iterating many matrix vector products and the sigmoid squishification function, but it's just a function nonetheless.",
+      "start": 955.78,
+      "end": 962.34
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " And in a way, it's kind of reassuring that it looks complicated. I mean, if it were any simpler,",
+      "start": 962.34,
+      "end": 968.74
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " what hope would we have that it could take on the challenge of recognizing digits?",
+      "start": 968.74,
+      "end": 972.26
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " And how does it take on that challenge? How does this network learn the appropriate weights and biases",
+      "start": 973.0600000000001,
+      "end": 978.1
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " just by looking at data? Well, that's what I'll show in the next video, and I'll also dig a little more into",
+      "start": 978.1,
+      "end": 983.46
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " what this particular network we're seeing is really doing. Now is the point I suppose I should say",
+      "start": 983.46,
+      "end": 988.98
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " subscribe to stay notified about when that video or any new videos come out, but realistically,",
+      "start": 988.98,
+      "end": 994.02
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " most of you don't actually receive notifications from YouTube, do you? Maybe more honestly,",
+      "start": 994.02,
+      "end": 998.82
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " I should say subscribe so that the neural networks that underlie YouTube's recommendation algorithm",
+      "start": 998.82,
+      "end": 1003.7
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " are primed to believe that you want to see content from this channel get recommended to you.",
+      "start": 1003.7,
+      "end": 1007.62
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " Anyway, stay posted for more. Thank you very much to everyone supporting these videos on Patreon.",
+      "start": 1007.62,
+      "end": 1013.86
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " I've been a little slow to progress in the probability series this summer, but I'm jumping",
+      "start": 1013.86,
+      "end": 1017.7
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " back into it after this project, so patrons, you can look out for updates there.",
+      "start": 1017.7,
+      "end": 1021.38
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " To close things off here, I have with me Leisha Lee, who did her PhD work on the theoretical side of",
+      "start": 1023.54,
+      "end": 1028.18
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " deep learning, and who currently works at a venture capital firm called Amplify Partners, who kindly",
+      "start": 1028.18,
+      "end": 1032.74
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " provided some of the funding for this video. So Leisha, one thing I think we should quickly bring up is",
+      "start": 1032.74,
+      "end": 1037.94
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " this sigmoid function. As I understand it, early networks used this to squish the relevant weighted",
+      "start": 1037.94,
+      "end": 1042.66
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " sum into that interval between zero and one, you know, kind of motivated by this biological analogy",
+      "start": 1042.66,
+      "end": 1047.6200000000001
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " of neurons either being inactive or active. Exactly. But relatively few modern networks actually use",
+      "start": 1047.6200000000001,
+      "end": 1053.22
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " sigmoid anymore. Yeah. It's kind of old school, right? Yeah, or rather, RELU seems to be much easier to train.",
+      "start": 1053.22,
+      "end": 1059.22
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " And RELU stands for Rectified Linear Unit? Yes. It's this kind of function where you're just taking",
+      "start": 1059.22,
+      "end": 1065.06
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " a max of zero and A, where A is given by what you were explaining in the video. And what this was",
+      "start": 1065.06,
+      "end": 1072.1000000000001
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " sort of motivated from, I think, was partially by a biological analogy with how neurons would either",
+      "start": 1072.1000000000001,
+      "end": 1079.6200000000001
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " be activated or not. And so if it passes a certain threshold, it would be the identity function. But if it",
+      "start": 1079.6200000000001,
+      "end": 1086.58
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " did not, then it would just not be activated. So it'd be zero. So it's kind of a simplification.",
+      "start": 1086.58,
+      "end": 1090.98
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " Using sigmoids didn't help training, or it was very difficult to train at some point. And people",
+      "start": 1090.98,
+      "end": 1096.58
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " just tried RELU. And it happened to work very well for these incredibly deep neural networks.",
+      "start": 1096.58,
+      "end": 1104.82
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " All right. Thank you, Leisha.",
+      "start": 1104.82,
+      "end": 1114.58
+    },
+    {
+      "chapter": "1",
+      "title": "But what is a neural network Deep learning",
+      "text": " Thank you.",
+      "start": 1114.58,
+      "end": 1116.58
+    }
+  ],
+  "text": " This is a 3. It's sloppily written and rendered at an extremely low resolution of 28 by 28 pixels, but your brain has no trouble recognizing it as a 3. And I want you to take a moment to appreciate how crazy it is that brains can do this so effortlessly. I mean this, this, and this are also recognizable as 3s, even though the specific values of each pixel is very different from one image to the next. The particular light-sensitive cells in your eye that are firing when you see this 3 are very different from the ones firing when you see this 3. But something in that crazy smart visual cortex of yours resolves these as representing the same idea, while at the same time recognizing other images as their own distinct ideas. But if I told you, hey, sit down and write for me a program that takes in a grid of 28 by 28 pixels like this and outputs a single number between 0 and 10, telling you what it thinks the digit is, well the task goes from comically trivial to dauntingly difficult. Unless you've been living under a rock, I think I hardly need to motivate the relevance and importance of machine learning and neural networks to the present and to the future, but what I want to do here is show you what a neural network actually is, assuming no background, and to help visualize what it's doing. Not as a buzzword, but as a piece of math. My hope is just that you come away feeling like the structure itself is motivated, and to feel like you know what it means when you read or hear about a neural network quote unquote learning. This video is just going to be devoted to the structure component of that, and the following one is going to tackle learning. What we're going to do is put together a neural network that can learn to recognize handwritten digits. This is a somewhat classic example for introducing the topic, and I'm happy to stick with the status quo here, because at the end of the two videos I want to point you to a couple good resources where you can learn more, and where you can download the code that does this and play with it on your own computer. There are many, many variants of neural networks, and in recent years there's been sort of a boom in research towards these variants, but in these two introductory videos you and I are just going to look at the simplest plain vanilla form with no added frills. This is kind of a necessary prerequisite for understanding any of the more powerful modern variants, and trust me it still has plenty of complexity for us to wrap our minds around. But even in this simplest form it can learn to recognize handwritten digits, which is a pretty cool thing for a computer to be able to do. And at the same time you'll see how it does fall short of a couple hopes that we might have for it. As the name suggests, neural networks are inspired by the brain, but let's break that down. What are the neurons and in what sense are they linked together? Right now when I say neuron, all I want you to think about is a thing that holds a number, specifically a number between 0 and 1. It's really not more than that. For example, the network starts with a bunch of neurons corresponding to each of the 28x28 pixels of the input image, which is 784 neurons in total. Each one of these holds a number that represents the grayscale value of the corresponding pixel, ranging from 0 for black pixels up to 1 for white pixels. This number inside the neuron is called its activation, and the image you might have in mind here is that each neuron is lit up when its activation is a high number. So all of these 784 neurons make up the first layer of our network. Now jumping over to the last layer, this has 10 neurons, each representing one of the digits. The activation in these neurons, again some number that's between 0 and 1, represents how much the system thinks that a given image corresponds with a given digit. There's also a couple layers in between, called the hidden layers, which for the time being should just be a giant question mark for how on earth this process of recognizing digits is going to be handled. In this network I chose two hidden layers, each one with 16 neurons, and admittedly that's kind of an arbitrary choice. To be honest, I chose two layers based on how I want to motivate the structure in just a moment, and 16? Well that was just a nice number to fit on the screen. In practice there is a lot of room for experiment with a specific structure here. The way the network operates, activations in one layer determine the activations of the next layer. And of course the heart of the network, as an information processing mechanism, comes down to exactly how those activations from one layer bring about activations in the next layer. It's meant to be loosely analogous to how in biological networks of neurons, some groups of neurons firing cause certain others to fire. Now the network I'm showing here has already been trained to recognize digits. Let me show you what I mean by that. It means if you feed in an image, lighting up all 784 neurons of the input layer according to the brightness of each pixel in the image, that pattern of activations causes some very specific pattern in the next layer, which causes some pattern in the one after it, which finally gives some pattern in the output layer. And the brightest neuron of that output layer is the network's choice, so to speak, for what digit this image represents. And before jumping into the math for how one layer influences the next, or how training works, let's just talk about why it's even reasonable to expect a layered structure like this to behave intelligently. What are we expecting here? What is the best hope for what those middle layers might be doing? Well, when you or I recognize digits, we piece together various components. A 9 has a loop up top, and a line on the right. An 8 also has a loop up top, but it's paired with another loop down low. A 4 basically breaks down into 3 specific lines, and things like that. Now in a perfect world, we might hope that each neuron in the second to last layer corresponds with one of these subcomponents. That any time you feed in an image with, say, a loop up top, like a 9 or an 8, there's some specific neuron whose activation is going to be close to 1. And I don't mean this specific loop of pixels, the hope would be that any generally loopy pattern towards the top sets off this neuron. That way, going from the third layer to the last one just requires learning which combination of subcomponents corresponds to which digits. Of course, that just kicks the problem down the road, because how would you recognize these subcomponents, or even learn what the right subcomponents should be? And I still haven't even talked about how one layer influences the next, but run with me on this one for a moment. Recognizing a loop can also break down into subproblems. One reasonable way to do this would be to first recognize the various little edges that make it up. Similarly, a long line, like the kind you might see in the digits 1, or 4, or 7, well that's really just a long edge. Or maybe you think of it as a certain pattern of several smaller edges. So maybe our hope is that each neuron in the second layer of the network corresponds with the various relevant little edges. Maybe when an image like this one comes in, it lights up all of the neurons associated with around 8 to 10 specific little edges, which in turn lights up the neurons associated with the upper loop and a long vertical line, and those light up the neuron associated with a 9. Whether or not this is what our final network actually does is another question, one that I'll come back to once we see how to train the network. But this is a hope that we might have, a sort of goal with the layered structure like this. Moreover, you can imagine how being able to detect edges and patterns like this would be really useful for other image recognition tasks. And even beyond image recognition, there are all sorts of intelligent things you might want to do that break down into layers of abstraction. Parsing speech, for example, involves taking raw audio and picking out distinct sounds, which combine to make certain syllables, which combine to form words, which combine to make up phrases and more abstract thoughts, etc. But getting back to how any of this actually works, picture yourself right now designing how exactly the activations in one layer might determine the activations in the next. The goal is to have some mechanism that could conceivably combine pixels into edges, or edges into patterns, or patterns into digits. And to zoom in on one very specific example, let's say the hope is for one particular neuron in the second layer to pick up on whether or not the image has an edge in this region here. The question at hand is what parameters should the network have? What dials and knobs should you be able to tweak so that it's expressive enough to potentially capture this pattern, or any other pixel pattern, or the pattern that several edges can make a loop, and other such things? Well, what we'll do is assign a weight to each one of the connections between our neuron and the neurons from the first layer. These weights are just numbers. Then take all of those activations from the first layer and compute their weighted sum according to these weights. I find it helpful to think of these weights as being organized into a little grid of their own, and I'm going to use green pixels to indicate positive weights and red pixels to indicate negative weights, where the brightness of that pixel is some loose depiction of the weights value. Now if we made the weights associated with almost all of the pixels zero, except for some positive weights in this region that we care about, then taking the weighted sum of all the pixel values really just amounts to adding up the values of the pixel just in the region that we care about. And if you really wanted to pick up on whether there's an edge here, what you might do is have some negative weights associated with the surrounding pixels. Then the sum is largest when those middle pixels are bright, but the surrounding pixels are darker. When you compute a weighted sum like this, you might come out with any number, but for this network, what we want is for activations to be some value between zero and one. So a common thing to do is to pump this weighted sum into some function that squishes the real number line into the range between zero and one. And a common function that does this is called the sigmoid function, also known as a logistic curve. Basically, very negative inputs end up close to zero, very positive inputs end up close to one, and it just steadily increases around the input zero. So the activation of the neuron here is basically a measure of how positive the relevant weighted sum is. But maybe it's not that you want the neuron to light up when the weighted sum is bigger than zero. Maybe you only want it to be active when the sum is bigger than, say, 10. That is, you want some bias for it to be inactive. What we'll do then is just add in some other number, like negative 10, to this weighted sum before plugging it through the sigmoid squishification function. That additional number is called the bias. So the weights tell you what pixel pattern this neuron in the second layer is picking up on, and the bias tells you how high the weighted sum needs to be before the neuron starts getting meaningfully active. And that is just one neuron. Every other neuron in this layer is going to be connected to all 784 pixel neurons from the first layer, and each one of those 784 connections has its own weight associated with it. Also, each one has some bias, some other number that you add on to the weighted sum before squishing it with the sigmoid. And that's a lot to think about! With this hidden layer of 16 neurons, that's a total of 784 times 16 weights, along with 16 biases. And all of that is just the connections from the first layer to the second. The connections between the other layers also have a bunch of weights and biases associated with them. All said and done, this network has almost exactly 13,000 total weights and biases. 13,000 knobs and dials that can be tweaked and turned to make this network behave in different ways. So when we talk about learning, what that's referring to is getting the computer to find a valid setting for all of these many many numbers so that it'll actually solve the problem at hand. One thought experiment that is at once fun and kind of horrifying is to imagine sitting down and setting all of these weights and biases by hand, purposefully tweaking the numbers so that the second layer picks up on edges, the third layer picks up on patterns, etc. I personally find this satisfying rather than just treating the network as a total black box, because when the network doesn't perform the way you anticipate, if you've built up a little bit of a relationship with what those weights and biases actually mean, you have a starting place for experimenting with how to change the structure to improve. Or when the network does work but not for the reasons you might expect, digging into what the weights and biases are doing is a good way to challenge your assumptions and really expose the full space of possible solutions. By the way, the actual function here is a little cumbersome to write down, don't you think? So let me show you a more notationally compact way that these connections are represented. This is how you'd see it if you choose to read up more about neural networks. See this, the matrix. Ariamente, all, let me draw down, and we see you now on a rail arm in the sameonut edit as a argot. S Sandleton Consortium Democratic values, of course, in the same way, I root on theCINGS will continue the things that I choose, and I mean that we are wasting all of this novaium in eachvector feels like this normal return, of the terms in the matrix vector product of everything we have on the left here. By the way, so much of machine learning just comes down to having a good grasp of linear algebra, so for any of you who want a nice visual understanding for matrices and what matrix vector multiplication means, take a look at the series I did on linear algebra, especially chapter 3. Back to our expression, instead of talking about adding the bias to each one of these values independently, we represent it by organizing all those biases into a vector, and adding the entire vector to the previous matrix vector product. Then as a final step, I'll wrap a sigmoid around the outside here, and what that's supposed to represent is that you're going to apply the sigmoid function to each specific component of the resulting vector inside. So once you write down this weight matrix and these vectors as their own symbols, you can communicate the full transition of activations from one layer to the next in an extremely tight and neat little expression. And this makes the relevant code both a lot simpler and a lot faster, since many libraries optimize the heck out of matrix multiplication. Remember how earlier I said these neurons are simply things that hold numbers? Well, of course, the specific numbers that they hold depends on the image you feed in. So it's actually more accurate to think of each neuron as a function, one that takes in the outputs of all the neurons in the previous layer, and spits out a number between 0 and 1. Really, the entire network is just a function, one that takes in 784 numbers as an input, and spits out 10 numbers as an output. It's an absurdly complicated function, one that involves 13,000 parameters in the forms of these weights and biases that pick up on certain patterns, and which involves iterating many matrix vector products and the sigmoid squishification function, but it's just a function nonetheless. And in a way, it's kind of reassuring that it looks complicated. I mean, if it were any simpler, what hope would we have that it could take on the challenge of recognizing digits? And how does it take on that challenge? How does this network learn the appropriate weights and biases just by looking at data? Well, that's what I'll show in the next video, and I'll also dig a little more into what this particular network we're seeing is really doing. Now is the point I suppose I should say subscribe to stay notified about when that video or any new videos come out, but realistically, most of you don't actually receive notifications from YouTube, do you? Maybe more honestly, I should say subscribe so that the neural networks that underlie YouTube's recommendation algorithm are primed to believe that you want to see content from this channel get recommended to you. Anyway, stay posted for more. Thank you very much to everyone supporting these videos on Patreon. I've been a little slow to progress in the probability series this summer, but I'm jumping back into it after this project, so patrons, you can look out for updates there. To close things off here, I have with me Leisha Lee, who did her PhD work on the theoretical side of deep learning, and who currently works at a venture capital firm called Amplify Partners, who kindly provided some of the funding for this video. So Leisha, one thing I think we should quickly bring up is this sigmoid function. As I understand it, early networks used this to squish the relevant weighted sum into that interval between zero and one, you know, kind of motivated by this biological analogy of neurons either being inactive or active. Exactly. But relatively few modern networks actually use sigmoid anymore. Yeah. It's kind of old school, right? Yeah, or rather, RELU seems to be much easier to train. And RELU stands for Rectified Linear Unit? Yes. It's this kind of function where you're just taking a max of zero and A, where A is given by what you were explaining in the video. And what this was sort of motivated from, I think, was partially by a biological analogy with how neurons would either be activated or not. And so if it passes a certain threshold, it would be the identity function. But if it did not, then it would just not be activated. So it'd be zero. So it's kind of a simplification. Using sigmoids didn't help training, or it was very difficult to train at some point. And people just tried RELU. And it happened to work very well for these incredibly deep neural networks. All right. Thank you, Leisha. Thank you."
+}
